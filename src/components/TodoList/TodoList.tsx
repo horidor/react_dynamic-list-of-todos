@@ -61,7 +61,7 @@ const TodoListComponent: React.FC<Props> = ({
             >
               <span className="icon">
                 <i
-                  className={`far + ${todo.id === selectedTodoId ? 'fa-eye-slash' : 'fa-eye'}`}
+                  className={`far ${todo.id === selectedTodoId ? 'fa-eye-slash' : 'fa-eye'}`}
                 />
               </span>
             </button>

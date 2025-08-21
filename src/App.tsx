@@ -63,7 +63,7 @@ export const App: React.FC = () => {
     setQuery(event.target.value);
   };
 
-  const hanldeCompleteQueryChange = (
+  const handleCompleteQueryChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ) => {
     setCompleteQuery(event.target.value as StringCompletedOptions);
@@ -87,7 +87,7 @@ export const App: React.FC = () => {
                 query={query}
                 completeQuery={completeQuery}
                 handleQueryChange={handleQueryChange}
-                handleCompleteQueryChange={hanldeCompleteQueryChange}
+                handleCompleteQueryChange={handleCompleteQueryChange}
                 handleFilterClear={handleFilterClear}
               />
             </div>
