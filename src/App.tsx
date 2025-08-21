@@ -1,4 +1,4 @@
-/* eslint-disable max-len */
+/* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import 'bulma/css/bulma.css';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -10,16 +10,16 @@ import { Loader } from './components/Loader';
 import { getTodos } from './api';
 import { Todo } from './types/Todo';
 
-type stringCompletedOptions = 'all' | 'active' | 'completed';
+type StringCompletedOptions = 'all' | 'active' | 'completed';
 
-type filterProps = {
+type FilterProps = {
   query: string;
-  completeQuery: stringCompletedOptions;
+  completeQuery: StringCompletedOptions;
 };
 
 function prepareTodos(
   todosFromServer: Todo[],
-  { query, completeQuery }: filterProps,
+  { query, completeQuery }: FilterProps,
 ) {
   let todos = [...todosFromServer];
 
@@ -43,7 +43,7 @@ export const App: React.FC = () => {
   const [selectedTodoId, setSelectedTodoId] = useState<number | null>(null);
   const [query, setQuery] = useState('');
   const [completeQuery, setCompleteQuery] =
-    useState<stringCompletedOptions>('all');
+    useState<StringCompletedOptions>('all');
 
   useEffect(() => {
     getTodos()
@@ -66,7 +66,7 @@ export const App: React.FC = () => {
   const hanldeCompleteQueryChange = (
     event: React.ChangeEvent<HTMLSelectElement>,
   ) => {
-    setCompleteQuery(event.target.value as stringCompletedOptions);
+    setCompleteQuery(event.target.value as StringCompletedOptions);
   };
 
   const handleFilterClear = () => {
